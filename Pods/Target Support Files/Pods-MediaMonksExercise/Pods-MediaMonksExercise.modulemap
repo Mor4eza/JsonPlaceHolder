@@ -1,0 +1,6 @@
+framework module Pods_MediaMonksExercise {
+  umbrella header "Pods-MediaMonksExercise-umbrella.h"
+
+  export *
+  module * { export * }
+}
