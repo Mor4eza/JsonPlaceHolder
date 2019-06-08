@@ -24,7 +24,7 @@ class PhotosViewController: UICollectionViewController , UICollectionViewDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Photos".uppercased()
+        self.title = AppConstants.Titles.photosTitle.uppercased()
         getPhotos(page)
        
     }
@@ -59,10 +59,12 @@ class PhotosViewController: UICollectionViewController , UICollectionViewDelegat
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppConstants.CellIdentifiers.photosCollectionViewCell , for: indexPath) as! PhotoCollectionViewCell
         
         if let url = URL(string: self.photosData[indexPath.item].thumbnailUrl) {
-            cell.imgPhoto.kf.setImage(with: url)
+            cell.imgPhoto.kf.setImage(with: url,
+                                      placeholder: UIImage(named: AppConstants.Images.MediaMonksLogo),
+                                      options: [.transition(.fade(1))])
         }
         return cell
     }
@@ -84,7 +86,7 @@ class PhotosViewController: UICollectionViewController , UICollectionViewDelegat
     }
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailsVC = self.storyboard?.instantiateViewController(withIdentifier: "PhotoDetailsViewController") as! PhotoDetailsViewController
+        let detailsVC = self.storyboard?.instantiateViewController(withIdentifier: AppConstants.VCIdentifiers.PhotoDetailsViewController) as! PhotoDetailsViewController
         detailsVC.item = photosData[indexPath.item]
         self.navigationController?.pushViewController(detailsVC, animated: true)
     }

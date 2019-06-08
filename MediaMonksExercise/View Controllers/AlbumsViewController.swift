@@ -17,8 +17,10 @@ class AlbumsViewController: UITableViewController {
         super.viewDidLoad()
 
         Utilites.showProgress()
-        self.title = "Albums".uppercased()
+        self.title = AppConstants.Titles.albumsTitle.uppercased()
         getAlbums(page)
+        self.tableView.tableFooterView = UIView()
+
        
     }
 
@@ -46,12 +48,10 @@ class AlbumsViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return albumData.count
     }
     
@@ -60,7 +60,7 @@ class AlbumsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AlbumTableViewCell", for: indexPath) as! AlbumTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: AppConstants.CellIdentifiers.albumsTableViewCell, for: indexPath) as! AlbumTableViewCell
 
         if let title =  self.albumData[indexPath.row].title {
             cell.lblTitle.text = title
@@ -91,7 +91,7 @@ class AlbumsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let photosVC = self.storyboard?.instantiateViewController(withIdentifier: "PhotosViewController") as! PhotosViewController
+        let photosVC = self.storyboard?.instantiateViewController(withIdentifier: AppConstants.VCIdentifiers.PhotosViewController) as! PhotosViewController
         photosVC.albumId = self.albumData[indexPath.row].id
         self.navigationController?.pushViewController(photosVC, animated: true)
     }

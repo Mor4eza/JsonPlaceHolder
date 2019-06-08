@@ -25,11 +25,11 @@ class Api {
         
         let url = URL(string: AppConstants.mainUrl + uri)!
         let request = Alamofire.request(url, method: method, parameters: parameters)
-       
+        
         request.responseData { dataResponse in
             if let error = dataResponse.result.error as NSError?, error.code == -1009 {
                 if let rootController = UIApplication.shared.keyWindow?.rootViewController {
-                        Utilites.shared.showOneButtonDialog("Error", desc: "No Internet Connection", okTitle: "Retry", onView: rootController)
+                    Utilites.shared.showOneButtonDialog("Error", desc: "No Internet Connection", okTitle: "Retry", onView: rootController)
                 }
             } else {
                 if let statusCode = dataResponse.response?.statusCode {
@@ -68,7 +68,7 @@ class Api {
     ///   - parameters: parameters
     /// - Returns: return the data requst for json encoding
     fileprivate func post(_ uri: String,
-              parameters: [String: Any]? = nil) -> DataRequest {
+                          parameters: [String: Any]? = nil) -> DataRequest {
         return request(method: .post, uri: uri, parameters: parameters)
     }
     
@@ -81,7 +81,7 @@ class Api {
         let parameters = ["_limit": 15,
                           "_page": page]
         
-        let req =  get("/albums",parameters: parameters)
+        let req = get("/albums",parameters: parameters)
         
         req.responseJSON { response in
             
@@ -100,12 +100,19 @@ class Api {
     }
     
     
+    
+    /// get Photos Data
+    ///
+    /// - Parameters:
+    ///   - albumId: album id
+    ///   - page: current page
+    ///   - completionHandler: return the data request
     func getPhotoList(albumId: Int ,page: Int, _ completionHandler: @escaping ([Photo]?) -> Void){
         
         let parameters = ["_limit": 15,
                           "_page": page]
         
-        let req =  get("/albums/\(albumId)/photos",parameters: parameters)
+        let req = get("/albums/\(albumId)/photos",parameters: parameters)
         
         req.responseJSON { response in
             
@@ -121,7 +128,7 @@ class Api {
                 print(err)
             }
         }
-
+        
         
     }
     

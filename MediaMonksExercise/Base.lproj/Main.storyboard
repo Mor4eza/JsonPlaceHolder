@@ -138,8 +138,8 @@
                         <viewLayoutGuide key="safeArea" id="l4T-XF-Tii"/>
                     </view>
                     <connections>
-                        <outlet property="imgPhoto" destination="X2R-B3-B97" id="Frn-fe-uq3"/>
-                        <outlet property="tvDetails" destination="rSM-Yh-YDy" id="jYs-dq-eJx"/>
+                        <outlet property="imgPhoto" destination="X2R-B3-B97" id="W0Y-IE-iSo"/>
+                        <outlet property="tvDetails" destination="rSM-Yh-YDy" id="mqX-2Z-6MR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6y-2G-cDE" userLabel="First Responder" sceneMemberID="firstResponder"/>

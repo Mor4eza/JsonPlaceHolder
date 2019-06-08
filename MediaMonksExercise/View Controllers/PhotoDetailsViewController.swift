@@ -18,8 +18,9 @@ class PhotoDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.title = "Photo Details".uppercased()
+        self.title = AppConstants.Titles.photoDetailsTitle.uppercased()
         if let imageURL = URL(string: item.url) {
+            imgPhoto.kf.indicatorType = .activity
             imgPhoto.kf.setImage(with: imageURL)
         }
         tvDetails.text = item.title

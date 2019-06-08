@@ -25,8 +25,6 @@ class Utilites {
     
     static func showProgress(){
         MKProgress.config.hudType = .radial
-//        MKProgress.config.width = 64.0
-//        MKProgress.config.height = 64.0
         MKProgress.config.hudColor = .white
         MKProgress.config.backgroundColor = UIColor(white: 0, alpha: 0.55)
         MKProgress.config.cornerRadius = 16.0
