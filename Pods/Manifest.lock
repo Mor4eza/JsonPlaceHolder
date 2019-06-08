@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (4.8.2)
   - Kingfisher (4.10.1)
+  - MKProgress (1.0.9)
 
 DEPENDENCIES:
   - Alamofire
   - Kingfisher (~> 4.10.0)
+  - MKProgress (= 1.0.9)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - Kingfisher
+    - MKProgress
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
+  MKProgress: 4fa8dd701b872c82b780c885d577f99c8848d584
 
-PODFILE CHECKSUM: 41816ed87091dfe7f114ddd0f18c2dbfcfcdfbd7
+PODFILE CHECKSUM: 18483b1a2a072bc036563de972a8dcfe8bcb2490
 
 COCOAPODS: 1.6.2

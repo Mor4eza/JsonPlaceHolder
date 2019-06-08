@@ -7,7 +7,6 @@
 //
 
 import UIKit
-
 class AlbumsViewController: UITableViewController {
 
     var albumData = [Album]()
@@ -17,6 +16,7 @@ class AlbumsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        Utilites.showProgress()
         self.title = "Albums".uppercased()
         getAlbums(page)
        
@@ -28,6 +28,7 @@ class AlbumsViewController: UITableViewController {
         loadingData = true
         Api.shared.getAlbumList(page: page){
             albums in
+            Utilites.hideProgress()
             self.loadingData = false
             if albums?.count == 0 {
                 self.allDataLoaded = true

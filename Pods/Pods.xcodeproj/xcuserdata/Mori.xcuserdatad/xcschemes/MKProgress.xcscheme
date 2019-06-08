@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "39FF29114331673BF38B929E88DE55B8"
-               BuildableName = "Pods-MediaMonksExerciseTests.framework"
-               BlueprintName = "Pods-MediaMonksExerciseTests"
+               BlueprintIdentifier = "A463AA8AA784C311D4A01EE866457E92"
+               BuildableName = "MKProgress.framework"
+               BlueprintName = "MKProgress"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

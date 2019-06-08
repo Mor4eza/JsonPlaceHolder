@@ -8,7 +8,7 @@ target 'MediaMonksExercise' do
   # Pods for MediaMonksExercise
     pod 'Alamofire'
     pod 'Kingfisher' , '~> 4.10.0'
-
+    pod 'MKProgress', '1.0.9'
   target 'MediaMonksExerciseTests' do
     inherit! :search_paths
     # Pods for testing

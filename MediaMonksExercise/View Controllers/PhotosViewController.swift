@@ -14,7 +14,11 @@ class PhotosViewController: UICollectionViewController , UICollectionViewDelegat
     
     var photosData = [Photo]()
     var page = 0
-    var loadingData = false
+    var loadingData = false {
+        didSet {
+            loadingData ? Utilites.showProgress() : Utilites.hideProgress()
+        }
+    }
     var allDataLoaded = false
     var albumId: Int!
     override func viewDidLoad() {
@@ -23,7 +27,6 @@ class PhotosViewController: UICollectionViewController , UICollectionViewDelegat
         self.title = "Photos".uppercased()
         getPhotos(page)
        
-        // Do any additional setup after loading the view.
     }
     
     func getPhotos(_ page: Int){
@@ -57,8 +60,8 @@ class PhotosViewController: UICollectionViewController , UICollectionViewDelegat
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCollectionViewCell", for: indexPath) as! PhotoCollectionViewCell
-            
-        if let url = URL(string: self.photosData[indexPath.row].thumbnailUrl) {
+        
+        if let url = URL(string: self.photosData[indexPath.item].thumbnailUrl) {
             cell.imgPhoto.kf.setImage(with: url)
         }
         return cell
@@ -80,6 +83,11 @@ class PhotosViewController: UICollectionViewController , UICollectionViewDelegat
         
     }
 
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailsVC = self.storyboard?.instantiateViewController(withIdentifier: "PhotoDetailsViewController") as! PhotoDetailsViewController
+        detailsVC.item = photosData[indexPath.item]
+        self.navigationController?.pushViewController(detailsVC, animated: true)
+    }
     
     // MARK: UICollectionViewDelegate
 
