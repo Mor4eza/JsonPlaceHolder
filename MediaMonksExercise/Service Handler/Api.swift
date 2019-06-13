@@ -29,16 +29,20 @@ class Api {
         request.responseData { dataResponse in
             if let error = dataResponse.result.error as NSError?, error.code == -1009 {
                 if let rootController = UIApplication.shared.keyWindow?.rootViewController {
+                    Utilites.hideProgress()
                     Utilites.shared.showOneButtonDialog("Error", desc: "No Internet Connection", okTitle: "Retry", onView: rootController)
                 }
             } else {
                 if let statusCode = dataResponse.response?.statusCode {
                     switch statusCode {
                     case 403:
+                        Utilites.hideProgress()
                         print("403 - forbidden")
                     case 404:
+                        Utilites.hideProgress()
                         print("404 - not found")
                     case 500:
+                        Utilites.hideProgress()
                         print("500 - no response")
                     default:
                         break

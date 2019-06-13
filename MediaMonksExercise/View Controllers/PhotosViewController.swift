@@ -61,6 +61,11 @@ class PhotosViewController: UICollectionViewController , UICollectionViewDelegat
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AppConstants.CellIdentifiers.photosCollectionViewCell , for: indexPath) as! PhotoCollectionViewCell
         
+        cell.layer.borderColor = UIColor.lightGray.cgColor
+        cell.layer.borderWidth = 0.5
+        cell.layer.cornerRadius = 5.0
+        cell.layer.masksToBounds = true
+        
         if let url = URL(string: self.photosData[indexPath.item].thumbnailUrl) {
             cell.imgPhoto.kf.setImage(with: url,
                                       placeholder: UIImage(named: AppConstants.Images.MediaMonksLogo),
@@ -88,7 +93,7 @@ class PhotosViewController: UICollectionViewController , UICollectionViewDelegat
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailsVC = self.storyboard?.instantiateViewController(withIdentifier: AppConstants.VCIdentifiers.PhotoDetailsViewController) as! PhotoDetailsViewController
         detailsVC.item = photosData[indexPath.item]
-        self.navigationController?.pushViewController(detailsVC, animated: true)
+        self.present(detailsVC, animated: true, completion: nil)
     }
     
     // MARK: UICollectionViewDelegate

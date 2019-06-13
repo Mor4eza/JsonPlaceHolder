@@ -25,6 +25,7 @@
 		8D87588022AB786900A9F1FF /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87587F22AB786900A9F1FF /* Photo.swift */; };
 		8D87588222AB78F800A9F1FF /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87588122AB78F800A9F1FF /* PhotoCollectionViewCell.swift */; };
 		8D87588622AB909F00A9F1FF /* PhotoDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87588522AB909F00A9F1FF /* PhotoDetailsViewController.swift */; };
+		8DCCCC3E22B2248900688454 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DCCCC3D22B2248900688454 /* UIViewController.swift */; };
 		9EEBFE7C22D440B769D4FDAE /* Pods_MediaMonksExerciseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA791EEAD5F75CF20860A60 /* Pods_MediaMonksExerciseUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		8D87587F22AB786900A9F1FF /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		8D87588122AB78F800A9F1FF /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		8D87588522AB909F00A9F1FF /* PhotoDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailsViewController.swift; sourceTree = "<group>"; };
+		8DCCCC3D22B2248900688454 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		C3F980EAE53BBB4D739B24B6 /* Pods-MediaMonksExerciseUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaMonksExerciseUITests.release.xcconfig"; path = "Target Support Files/Pods-MediaMonksExerciseUITests/Pods-MediaMonksExerciseUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C7E674C03ED67AF14B2D9AA6 /* Pods_MediaMonksExerciseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediaMonksExerciseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D925385E82B5EF7838068557 /* Pods-MediaMonksExerciseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaMonksExerciseUITests.debug.xcconfig"; path = "Target Support Files/Pods-MediaMonksExerciseUITests/Pods-MediaMonksExerciseUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		8D87583D22AA7C0000A9F1FF /* MediaMonksExercise */ = {
 			isa = PBXGroup;
 			children = (
+				8DCCCC3C22B2245C00688454 /* Extension */,
 				8D87587822AB718C00A9F1FF /* View Controllers */,
 				8D87587722AA8C2800A9F1FF /* Views */,
 				8D87587422AA87DB00A9F1FF /* Models */,
@@ -217,6 +220,14 @@
 				8D87588522AB909F00A9F1FF /* PhotoDetailsViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		8DCCCC3C22B2245C00688454 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8DCCCC3D22B2248900688454 /* UIViewController.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		B0D1DF3961405A95C5B0351B /* Pods */ = {
@@ -464,6 +475,7 @@
 			files = (
 				8D87587E22AB783D00A9F1FF /* PhotosViewController.swift in Sources */,
 				8D87587A22AB71B100A9F1FF /* AlbumsViewController.swift in Sources */,
+				8DCCCC3E22B2248900688454 /* UIViewController.swift in Sources */,
 				8D87586E22AA7DFC00A9F1FF /* Api.swift in Sources */,
 				8D87588022AB786900A9F1FF /* Photo.swift in Sources */,
 				8D87588622AB909F00A9F1FF /* PhotoDetailsViewController.swift in Sources */,
